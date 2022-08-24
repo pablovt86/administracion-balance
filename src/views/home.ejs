@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <%- include('partials/head')  %> 
+    <body>
+    <%- include('partials/headers')  %> 
+
+
+  
+  
+    <h1><%= title %></h1>
+  
+     
+     <% categories.forEach(cat => { %>
+        <h1><%= cat.nombre %> </h1>
+     <% }) %>
+
+     <% operaciones.forEach(ope => { %>
+        <li><%= ope%> </li>
+     <% }) %>
+
+     
+
+    <p>Welcome to <%= title %></p>
+  </body>
+</html>
