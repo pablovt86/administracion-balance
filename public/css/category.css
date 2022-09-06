@@ -1,0 +1,48 @@
+.container-category{
+  
+    width: 500px;
+    height: 300px;
+    border: 1px solid grey;
+    margin: 0 auto;
+  
+
+
+}
+.container-category .table-category{
+    text-align: center;
+    width: 100%;
+}
+.container-category .table-category .th{
+     margin: 0px 20px ;
+
+}
+
+
+
+
+.container-category .title-category{
+    font-size: 24px;
+    text-align: center;
+    margin: 20px 0px;
+    color:aliceblue;
+}
+
+
+.container-category .button{
+
+    margin: 20px auto;
+
+}
+
+.container-category .button .btn-sucess{
+    padding: 8px;
+    border-radius: 50px;
+}
+
+
+.container-category .button-danger{
+
+    background: none;
+    border: none;
+    color: red;
+}

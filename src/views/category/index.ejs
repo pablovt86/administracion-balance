@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %> 
+<body>
+    <%- include('../partials/headers') %> 
+    
+    <div class="container-category">
+<h1 class="title-category" >crear categoria <a href="/category/create"><i class="fas fa-arrow-alt-square-right"></i></a> </h1>
+
+        
+<table class="table-category">
+<thead>
+<tr>
+<th class="th">Nombre</th>
+<th class="th">Descripcion</th>
+
+</tr>
+
+
+</thead>
+<% category.forEach(cat => { %>
+ 
+
+<tbody>
+<tr>
+<th><%= cat.name %> </th>
+
+<th><%- cat.description %> </th>
+<th><a href="/category/edit/<%- cat.idcategory %> " ><i class="far fa-edit"></i></a></th>
+
+<th>
+    <form method="POST" action="/category/destroy/<%= cat.idcategory %>?_method=DELETE">
+        <button class="button-danger" type="submit"><i class="fas fa-trash"></i></button> 
+      </form>
+    
+    
+</tr>
+
+<% }) %> 
+</tbody>
+
+
+</table>
+
+</div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %> 
+<body>
+    <%- include('../partials/headers') %> 
+ 
+   <div class="container-category">
+
+    <form action="/category/update/<%- category.idcategory %> " method="post">
+      <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input type="text" name="name" value="<%= category.name %> ">
+      <small class="text-error errorSubmit" id="errorName"></small>
+      <% if (locals.errors && errors.name) { %>
+      <small id="errorName" class="text-error"><%= errors.name.msg %></small>
+      <% } %>    </div>
+
+    <div class="form-group">
+        <label for="nombre">Descripcion</label>
+        <input type="text" name="description" value="<%= category.description %> ">
+        <% if (locals.errors && errors.description) { %>
+          <small id="errorDescription" class="text-error"><%= errors.description.msg %></small>
+          <% } %>
+
+      </div>
+        <div class = "button">
+       <button type="submit" class="btn-sucess">Editar</button>
+    </div>
+
+
+    </form>
+
+
+
+   </div>
+
+</body>
+</html>

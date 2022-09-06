@@ -7,35 +7,64 @@
     <%- include('../partials/headers') %> 
 <div class="container-body">
    <div class="container-register">
-     <form action="" method="post">
+     <form action="/users/register" id="form" method="post">
      <div class="form-group">
         <label for="nombre">Nombre</label>
-      <input type="text" name="nombre" id="nombre">
+      <input type="text" name="name" id="nombre" class="data">
+      <small class="text-error errorSubmit" id="errorName"></small>
+      <% if (locals.errors && errors.name) { %>
+      <small id="errorName" class="text-error"><%= errors.name.msg %></small>
+      <% } %>
      </div>
      <div class="form-group">
         <label for="nombre">Apellido</label>
-      <input type="text" name="apellido" id="apelido">
+      <input type="text" name="lastname" id="apellido" class="data">
+      <small class="text-error errorSubmit" id="errorName"></small>
+      <% if (locals.errors && errors.lastname) { %>
+      <small id="errorapellido" class="text-error"><%= errors.lastname.msg %></small>
+      <% } %>
      </div>
      <div class="form-group">
         <label for="fecha">Fecha</label>
-        <input type="date" name="fecha" id="fecha">
+        <input type="date" name="date" id="fecha" class="data">
+        <small class="text-error errorSubmit" id="errorFecha"></small>
+        <% if (locals.errors && errors.date) { %>
+        <small id="errorFecha" class="text-error"><%= errors.date.msg %></small>
+        <% } %>
      </div>
      <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email"class="data">
+        <small class="text-error errorSubmit" id="errorEmail"></small>
+        <% if (locals.errors && errors.email) { %>
+        <small id="errorEmail" class="text-error"><%= errors.email.msg %></small>
+        <% } %>
      </div>
      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">
+        <label for="password">clave</label>
+        <input type="password" name="password" id="password"class="data">
+        <small class="text-error errorSubmit" id="errorPassword"></small>
+        <% if (locals.errors && errorspassword) { %>
+        <small id="errorPassword" class="text-error"><%= errors.password.msg %></small>
+        <% } %>
      </div>
+     <div class="form-group">
+      <label for="re-pass">re-clave</label>
+      <input type="password" name="pass2" id="pass2" class="data">
+      <small class="text-error errorSubmit" id="errorName"></small>
+      <% if (locals.errors && errors.repass2) { %>
+      <small id="errorRepass" class="text-error"><%= errors.repass2.msg %></small>
+      <% } %>
+   </div>
+
 
     
        <div class="button">
-        <input type="button"  class="btn-button"value="enviar">
+        <input type="submit"  class="btn-button"value="enviar">
 
        </div>
        <div class="form-group">
-        <a href="#" >ya tienes cuenta</a>
+        <a href="/users/login" >ya tienes cuenta??</a>
      </div>
        
 
@@ -56,6 +85,6 @@
 
 
 
-    
+    <script src="/js/validation/validationUsers.js"></script>
 </body>
 </html>

@@ -1,24 +1,24 @@
 module.exports = (Sequelize, dataTypes)=>{
-    const alias ='Usuario';
+    const alias ='User';
 
     const cols = {
-        idusuarios: {
+        idusers: {
             type: dataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
         },
 
-        nombre: {
+        name: {
             type: dataTypes.STRING(45),
             allowNull: false
         },
 
-        apellido: {
+        lastname: {
             type: dataTypes.STRING(45),
             allowNull: false
         },
-        fecha: {
+        date: {
             type: dataTypes.DATE,
             allowNull: false
         },
@@ -32,16 +32,13 @@ module.exports = (Sequelize, dataTypes)=>{
             type: dataTypes.STRING(200),
             allowNull: false
         },
-        idoperaciones: {
-            type: dataTypes.INTEGER,
-            allowNull:false
-        }
+      
 
    
     };
 
     const config = {
-        tableName: 'usuarios',
+        tableName: 'users',
         timestamps: false
 
      
@@ -49,12 +46,12 @@ module.exports = (Sequelize, dataTypes)=>{
 
     const Usuario = Sequelize.define(alias, cols, config);
 
-    Usuario.associate = (models)=>{
-        Usuario.hasOne(models.Operaciones, {
-            as: 'operaciones',
-            foreignKey: 'idusuario'
-        });
-    };
+    // Usuario.associate = (models)=>{
+    //     Usuario.belongsTo(models.Operaciones, {
+    //         as: 'operaciones',
+    //         foreignKey: 'idusuario'
+    //     });
+    // };
 
     return Usuario;
 }

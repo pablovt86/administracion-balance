@@ -15,7 +15,7 @@ background-color: rgb(3, 1, 34);
 
 .container-register{
  width: 500px;
- height: 400px;
+ height: 500px;
  border:1px solid grey;  
  
 }
@@ -36,6 +36,7 @@ form .form-group label{
 }
 
 form .form-group input{
+    color: aliceblue;
     background: none;
     border: none;
     border-bottom: 1px solid white;
@@ -58,4 +59,12 @@ justify-content: space-around;
 }
 form .form-group a{
     color: aliceblue;
+}
+
+small.errorDanger {
+    color: red;
+    font-size: 12px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
 }
